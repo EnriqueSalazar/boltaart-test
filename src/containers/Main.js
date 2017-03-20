@@ -7,6 +7,7 @@ import Divider from 'material-ui/Divider';
 
 import AppBar from '../components/AppBar';
 import CustomerDetails from '../components/CustomerDetails';
+import Status from '../components/Status';
 
 class Main extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ class Main extends Component {
         this.state = {
             data: null,
             placedAt: null,
+            assignedAt: null,
         };
     }
 
@@ -24,10 +26,16 @@ class Main extends Component {
     componentWillReceiveProps(nextProps) {
         const data = nextProps.boltaart.data;
         let placedAt = null;
-        if (data && data.placedAt) {
-            placedAt = moment(data.placedAt);
+        let assignedAt = null;
+        if (data) {
+            if (data.placedAt) {
+                placedAt = moment(data.placedAt);
+            }
+            if (data.assignedAt) {
+                assignedAt = moment(data.assignedAt);
+            }
         }
-        this.setState({data, placedAt});
+        this.setState({data, placedAt, assignedAt});
     }
 
     render() {
@@ -42,6 +50,13 @@ class Main extends Component {
                         customer={this.state.data.customer}
                         placedAtTime={this.state.placedAt.format('hh.mm')}
                         placedAtDate={this.state.placedAt.format('DD-MM-YYYY')}
+                    />
+                    <Divider/>
+                    <Status
+                        status={this.state.data.status}
+                        assignee={this.state.data.assignee}
+                        assignedAtTime={this.state.assignedAt.format('hh.mm')}
+                        assignedAtDate={this.state.assignedAt.format('DD-MM-YYYY')}
                     />
                     <Divider/>
                 </div>
