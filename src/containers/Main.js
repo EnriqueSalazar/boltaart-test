@@ -1,16 +1,19 @@
 import React, {Component, PropTypes} from "react";
+import moment from 'moment';
 
 import {Grid, Row, Col} from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Divider from 'material-ui/Divider';
 
 import AppBar from '../components/AppBar';
+import CustomerDetails from '../components/CustomerDetails';
 
 class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
             data: null,
+            placedAt: null,
         };
     }
 
@@ -20,7 +23,11 @@ class Main extends Component {
 
     componentWillReceiveProps(nextProps) {
         const data = nextProps.boltaart.data;
-        this.setState({data});
+        let placedAt = null;
+        if (data && data.placedAt) {
+            placedAt = moment(data.placedAt);
+        }
+        this.setState({data, placedAt});
     }
 
     render() {
@@ -30,6 +37,12 @@ class Main extends Component {
             renderApp = (
                 <div>
                     <AppBar customer={this.state.data.customer}/>
+                    <Divider/>
+                    <CustomerDetails
+                        customer={this.state.data.customer}
+                        placedAtTime={this.state.placedAt.format('hh.mm')}
+                        placedAtDate={this.state.placedAt.format('DD-MM-YYYY')}
+                    />
                     <Divider/>
                 </div>
             )
