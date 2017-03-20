@@ -1,3 +1,5 @@
+//stateless component
+// receives the status, data of the assignee and date and time of the assignation
 import React, {PropTypes} from 'react';
 
 import {Row, Col} from 'react-bootstrap';

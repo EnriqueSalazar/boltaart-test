@@ -1,3 +1,5 @@
+//stateless component
+//receives list of items, iterates through them and renders Item for each
 import React, {PropTypes} from 'react';
 import Item from '../components/Item';
 

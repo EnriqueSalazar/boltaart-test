@@ -1,3 +1,5 @@
+//Stateless component that renders customer details
+// receives the customer details and placedAtTime and placedAtDate
 import React, {PropTypes} from 'react';
 
 const CustomerDetails = (props) => (

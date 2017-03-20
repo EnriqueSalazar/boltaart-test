@@ -1,3 +1,5 @@
+//stateless component
+//receives one item to be rendered.
 import React, {PropTypes} from 'react';
 
 import {Row, Col} from 'react-bootstrap';

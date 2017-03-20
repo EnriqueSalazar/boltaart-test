@@ -1,3 +1,5 @@
+//this container takes the state from the store and the actions and passes
+// them to the Main container.
 import React, { PropTypes } from 'react'
 import Main from './Main';
 import { bindActionCreators } from 'redux'
@@ -8,7 +10,6 @@ const App =({boltaart, actions}) =>(
             <div className="App">
                 <Main actions={actions} boltaart={boltaart}/>
             </div>
-
 );
 
 App.propTypes = {

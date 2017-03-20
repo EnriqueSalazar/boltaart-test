@@ -1,3 +1,6 @@
+//I didnt use MaterialUI AppBar because of the two lines in the title
+// This stateless component renders the bar in the top of the bar
+// receives customer data
 import React, {PropTypes} from 'react';
 
 import IconButton from 'material-ui/IconButton';

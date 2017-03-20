@@ -1,3 +1,4 @@
+// This container handles the state of the app, also defines the layout.
 import React, {Component, PropTypes} from "react";
 import moment from 'moment';
 
@@ -20,14 +21,18 @@ class Main extends Component {
         };
     }
 
+    //dispatchs an action to load the data
     componentDidMount() {
         this.props.actions.loadData();
     }
 
+    //when props received from the store, updates state.
     componentWillReceiveProps(nextProps) {
         const data = nextProps.boltaart.data;
         let placedAt = null;
         let assignedAt = null;
+
+        //converting string date to momentjs allows to format data and time as desired
         if (data) {
             if (data.placedAt) {
                 placedAt = moment(data.placedAt);
@@ -40,8 +45,10 @@ class Main extends Component {
     }
 
     render() {
+        //this enables conditional rendering when this.state.data is still empty
         const isDataLoaded = !!this.state.data;
         let renderApp = null;
+        //renders dumb components
         if (isDataLoaded) {
             renderApp = (
                 <div >
@@ -88,7 +95,7 @@ class Main extends Component {
         );
     }
 }
-
+//propTypes provides documentation of the props in each component.
 Main.propTypes = {
     actions: PropTypes.object.isRequired,
     boltaart: PropTypes.object.isRequired

@@ -1,3 +1,5 @@
+//handles the state of the data in the store, and future functionality when
+// items get selected
 import {
     FETCH_SERVICE,
     ADD_SELECTED,
