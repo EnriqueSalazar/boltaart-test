@@ -52,7 +52,7 @@ class Main extends Component {
             return compareId.id == id;
         }
         const itemIndex = items.findIndex(sameId)
-        if (itemIndex) {
+        if (typeof itemIndex != 'undefined') {
             const item = data.items[itemIndex];
             const status = item.status;
             if (status == 'NEW') {
@@ -61,6 +61,7 @@ class Main extends Component {
             if (status == 'RESERVED') {
                 data.items[itemIndex].status='NEW'
             }
+            debugger
         }
         this.setState({data})
     }
