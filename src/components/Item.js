@@ -43,8 +43,8 @@ const Item = (props) => (
         </Row>
         <Divider/>
     </div>
-
 );
+
 Item.propTypes = {
     product: PropTypes.object.isRequired,
 };
