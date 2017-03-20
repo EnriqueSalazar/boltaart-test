@@ -1,7 +1,10 @@
 import React, {PropTypes} from 'react';
 
 const CustomerDetails = (props) => (
-    <div>
+    <div style={{
+        paddingTop: 5,
+        paddingBottom: 5,
+    }}>
         <strong>Aangevraagd om: </strong>
         {props.placedAtTime && props.placedAtTime}
         {' ('}

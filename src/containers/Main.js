@@ -8,6 +8,7 @@ import Divider from 'material-ui/Divider';
 import AppBar from '../components/AppBar';
 import CustomerDetails from '../components/CustomerDetails';
 import Status from '../components/Status';
+import ItemsList from '../components/ItemsList';
 
 class Main extends Component {
     constructor(props) {
@@ -43,7 +44,7 @@ class Main extends Component {
         let renderApp = null;
         if (isDataLoaded) {
             renderApp = (
-                <div>
+                <div >
                     <AppBar customer={this.state.data.customer}/>
                     <Divider/>
                     <CustomerDetails
@@ -59,6 +60,9 @@ class Main extends Component {
                         assignedAtDate={this.state.assignedAt.format('DD-MM-YYYY')}
                     />
                     <Divider/>
+                    <ItemsList
+                        items={this.state.data.items}
+                    />
                 </div>
             )
         }
@@ -67,7 +71,14 @@ class Main extends Component {
                 <MuiThemeProvider>
                     <Grid style={{background: 'black'}}>
                         <Row>
-                            <Col md={4} mdOffset={4} style={{background: 'white', padding: 0}}>
+                            <Col
+                                md={4}
+                                mdOffset={4}
+                                style={{
+                                    background: 'white',
+                                    paddingRight: 0,
+                                    paddingLeft: 0
+                                }}>
                                 {renderApp}
                             </Col>
                         </Row>

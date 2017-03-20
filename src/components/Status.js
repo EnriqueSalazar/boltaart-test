@@ -4,7 +4,10 @@ import {Row, Col} from 'react-bootstrap';
 import {grey600, grey300} from 'material-ui/styles/colors';
 
 const Status = (props) => (
-    <div style={{backgroundColor: grey300}}>
+    <div style={{
+        backgroundColor: grey300, paddingTop: 5,
+        paddingBottom: 5,
+    }}>
         <Row>
             <Col md={5}>
                 <strong>Status</strong>

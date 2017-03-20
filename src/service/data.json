@@ -18,7 +18,7 @@
                 "name":"Boltaart Bosbessen",
                 "description":"Overheerlijke Boltaart met Bosbessen uit de keuken van de Bijenkorf.",
                 "price":17.95,
-                "imageUrl":"//placehold.it/57/ffffff/000000"
+                "imageUrl":"bosbessen-boltaart.jpg"
              }
          },
          {
@@ -31,7 +31,7 @@
                "name":"Aarbeien Boltaart",
                "description":"Biscuitdeeg met aardbeienbavaroise, afgemaakt met aardbeiengelei en chocoladegalletjes.",
                "price":17.95,
-               "imageUrl":"//placehold.it/57/ffffff/000000"
+               "imageUrl":"aardbeien-boltaart.jpg"
             }
         },
         {
@@ -44,7 +44,7 @@
               "name":"Truffel Boltaart",
               "description":"Chocolade mousse en biscuitdeeg gevuld met koffierumsaus en feuilletine, overgoten met pure chocoladegelei en gegarneerd met een krul van pure chocolade en chocoladegalletjes.",
               "price":17.95,
-              "imageUrl":"//placehold.it/57/ffffff/000000"
+              "imageUrl":"truffel-boltaart.jpg"
            }
         }
       ],
