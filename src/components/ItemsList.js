@@ -10,12 +10,19 @@ const ItemsList = (props) => (
     }}>
         {
             props.items && props.items.map(item =>
-                <Item key={item.id} product={item.product}/>)
+                <Item
+                    key={item.id}
+                    id={item.id}
+                    status={item.status}
+                    product={item.product}
+                    toggleItemStatus={props.toggleItemStatus}
+                />)
         }
     </div>
 );
 ItemsList.propTypes = {
     items: PropTypes.array.isRequired,
+    toggleItemStatus: PropTypes.func
 };
 
 export default ItemsList;

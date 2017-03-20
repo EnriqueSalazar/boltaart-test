@@ -44,6 +44,27 @@ class Main extends Component {
         this.setState({data, placedAt, assignedAt});
     }
 
+    toggleItemStatus = (id) => {
+
+        let data = this.state.data
+        const items = this.state.data.items
+        const sameId = (compareId) =>{
+            return compareId.id == id;
+        }
+        const itemIndex = items.findIndex(sameId)
+        if (itemIndex) {
+            const item = data.items[itemIndex];
+            const status = item.status;
+            if (status == 'NEW') {
+                data.items[itemIndex].status='RESERVED'
+            }
+            if (status == 'RESERVED') {
+                data.items[itemIndex].status='NEW'
+            }
+        }
+        this.setState({data})
+    }
+
     render() {
         //this enables conditional rendering when this.state.data is still empty
         const isDataLoaded = !!this.state.data;
@@ -69,6 +90,7 @@ class Main extends Component {
                     <Divider/>
                     <ItemsList
                         items={this.state.data.items}
+                        toggleItemStatus={this.toggleItemStatus}
                     />
                 </div>
             )
